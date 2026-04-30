@@ -2,6 +2,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+## Tech Stack
+- Html5
+- Tailwind CSS
+- Hero Ui
+- Gravity Icons
+- Next.js
+
 First, run the development server:
 
 ```bash
