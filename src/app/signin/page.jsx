@@ -3,12 +3,14 @@ import { authClient } from '@/lib/auth-client';
 import { Check } from '@gravity-ui/icons';
 import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { FaGithub } from 'react-icons/fa6';
 import { FcGoogle } from 'react-icons/fc';
 import { toast } from 'react-toastify';
 
 const SignInPage = () => {
+    const router = useRouter();
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -17,11 +19,11 @@ const SignInPage = () => {
         const { data, error } = await authClient.signIn.email({
           email: userData.email,
           password: userData.password,
-          callbackURL: "/",
-          
+        //   callbackURL: "/",
         });
-        if(data){      
-          toast.success("Login Successful")        
+        if(data){    
+          toast.success("Login Successful")  
+          router.push("/");      
         }
         if(error){
           toast.error(error.message)

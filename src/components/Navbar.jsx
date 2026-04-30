@@ -5,11 +5,22 @@ import Link from "next/link";
 import logo from "@/assets/logo.png"
 import { authClient } from "@/lib/auth-client";
 import { MdOutlineLogout } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const { data: session, isPending, } = authClient.useSession()
   const userData = session?.user;
-  console.log(userData);
+  const router = useRouter();
+
+  const handleSignOut = async () => {
+    await authClient.signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          router.push("/signin");
+        },
+      },
+    });
+  }
 
 
   return (
@@ -44,19 +55,20 @@ const Navbar = () => {
         {isPending ? "..." :
           userData ? <div className="flex justify-between items-center gap-4">
             <Avatar>
-              <Avatar.Image alt="John Doe" src="https://img.heroui.chat/image/avatar?w=400&h=400&u=3" />
-              <Avatar.Fallback>JD</Avatar.Fallback>
+              <Avatar.Image alt="John Doe" src={userData.image} />
+              <Avatar.Fallback>User</Avatar.Fallback>
             </Avatar>
             <h2 className="text-sm">Hello, {userData?.name}</h2>
-            <Button variant="danger" ><MdOutlineLogout />Logout</Button>
+            <Button onClick={handleSignOut} variant="danger" ><MdOutlineLogout />Logout</Button>
           </div> :
             <ButtonGroup className="">
-              <Button className="flex items-center  text-sm">
-                <Link href={"/signup"}>SignUp</Link>
-              </Button>
-              <Button variant="secondary">
+              <Button>
                 <Link href={"/signin"}>SignIn</Link>
               </Button>
+              <Button variant="secondary">
+                <Link href={"/signup"}>SignUp</Link>
+              </Button>
+              
             </ButtonGroup>
         }
       </nav>

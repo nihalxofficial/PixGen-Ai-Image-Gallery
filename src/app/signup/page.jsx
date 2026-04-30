@@ -12,12 +12,13 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { FaGithub } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
 export default function SignUpPage() {
+  const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -31,7 +32,8 @@ export default function SignUpPage() {
     });
     if(data){      
       toast.success("SignUp Successful")
-      redirect("/");
+      // redirect("/");
+      router.push("/")
     }
     if(error){
       toast.error(error.message)
