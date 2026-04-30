@@ -7,6 +7,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - Tailwind CSS
 - Hero Ui
 - Gravity Icons
+- React Icons
 - Next.js
 
 First, run the development server:
