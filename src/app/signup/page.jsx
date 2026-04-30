@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
@@ -11,13 +12,32 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { FaGithub } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 export default function SignUpPage() {
   const onSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData(e.target);
+    const userData = Object.fromEntries(formData.entries())
+
+    const { data, error } = await authClient.signUp.email({
+      name: userData.name,
+      email: userData.email,
+      password: userData.password,
+      image: userData.image,
+    });
+    if(data){      
+      toast.success("SignUp Successful")
+      redirect("/");
+    }
+    if(error){
+      toast.error(error.message)
+    }
   };
+
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
