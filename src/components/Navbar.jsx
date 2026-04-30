@@ -55,8 +55,10 @@ const Navbar = () => {
         {isPending ? "..." :
           userData ? <div className="flex justify-between items-center gap-4">
             <Avatar>
-              <Avatar.Image alt="John Doe" src={userData.image} />
-              <Avatar.Fallback>User</Avatar.Fallback>
+              <Avatar.Image alt={userData?.name} src={userData?.image}
+               referrerPolicy="no-referrer"
+                />
+              <Avatar.Fallback>{userData?.name[0]}</Avatar.Fallback>
             </Avatar>
             <h2 className="text-sm">Hello, {userData?.name}</h2>
             <Button onClick={handleSignOut} variant="danger" ><MdOutlineLogout />Logout</Button>
