@@ -1,4 +1,5 @@
 "use client"
+import GithubSignUp from '@/components/GithubSignUp';
 import GoogleSignUp from '@/components/GoogleSignUp';
 import { authClient } from '@/lib/auth-client';
 import { Check } from '@gravity-ui/icons';
@@ -77,14 +78,7 @@ const SignInPage = () => {
                     </p>
                     <div className="flex justify-center items-center gap-2">
                         <GoogleSignUp/>
-                        <Button
-                            className="flex"
-                            variant="bordered"
-                            onPress={() => handleSocialLogin("github")}
-                        >
-                            <FaGithub className="text-xl" />
-                            GitHub
-                        </Button>
+                        <GithubSignUp/>
                     </div>
                 </div>
                 <h2 className="text-center text-sm ">Don&apos;t have an account? <Link href={"/signup"} className="text-blue-600">Signup here</Link> </h2>
