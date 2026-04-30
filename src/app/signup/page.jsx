@@ -1,4 +1,5 @@
 "use client";
+import GoogleSignUp from "@/components/GoogleSignUp";
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
@@ -120,14 +121,7 @@ export default function SignUpPage() {
             Or sign up with
           </p>
           <div className="flex justify-center items-center gap-2">
-            <Button
-              className="flex"
-              variant="bordered"
-              onPress={() => handleSocialLogin("google")}
-            >
-              <FcGoogle className="text-xl" />
-              Google
-            </Button>
+            <GoogleSignUp/>
             <Button
               className="flex"
               variant="bordered"
