@@ -24,7 +24,7 @@ const ProfilePage = () => {
         <h2 className="text-xl font-bold">{user?.name}</h2>
         <p className="text-muted">{user?.email}</p>
 
-        <UpdateUserModal/>
+        <UpdateUserModal user={user}/>
       </Card>
     </div>
   );
