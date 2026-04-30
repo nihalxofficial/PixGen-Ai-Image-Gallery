@@ -9,6 +9,11 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - Gravity Icons
 - React Icons
 - Next.js
+- Better Auth
+- MongoDB
+- MongoDB Adapter
+- MongoDB Atlas
+- Social Login
 
 First, run the development server:
 

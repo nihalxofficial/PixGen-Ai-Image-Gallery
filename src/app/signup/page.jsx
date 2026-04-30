@@ -10,6 +10,9 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
 
 export default function SignUpPage() {
   const onSubmit = async (e) => {
@@ -86,6 +89,34 @@ export default function SignUpPage() {
             Reset
           </Button>
         </div>
+
+        {/* <Divider className="my-2" /> */}
+        <div className="divider"></div>
+
+        <div className="flex flex-col gap-2">
+          <p className="text-center text-small text-default-500">
+            Or sign up with
+          </p>
+          <div className="flex justify-center items-center gap-2">
+            <Button
+              className="flex"
+              variant="bordered"
+              onPress={() => handleSocialLogin("google")}
+            >
+              <FcGoogle className="text-xl" />
+              Google
+            </Button>
+            <Button
+              className="flex"
+              variant="bordered"
+              onPress={() => handleSocialLogin("github")}
+            >
+              <FaGithub className="text-xl" />
+              GitHub
+            </Button>
+          </div>
+        </div>
+        <h2 className="text-center text-sm ">Already have an account? <Link href={"/signin"} className="text-blue-600">Login here</Link> </h2>
       </Form>
     </Card>
   );
