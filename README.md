@@ -15,6 +15,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - MongoDB Atlas
 - Social Login
 
+## Topics
+- Google Font
+- Remote Image
+- Error handling
+- Dynamic Routing
+- Proxy
+
 First, run the development server:
 
 ```bash

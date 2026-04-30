@@ -15,5 +15,5 @@ export async function proxy(request) {
 }
 
 export const config = {
-  matcher: "/all-photos/:id*",
+  matcher: ["/all-photos/:id", "/profile"],
 };
