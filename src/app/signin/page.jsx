@@ -6,9 +6,6 @@ import { Check } from '@gravity-ui/icons';
 import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React from 'react';
-import { FaGithub } from 'react-icons/fa6';
-import { FcGoogle } from 'react-icons/fc';
 import { toast } from 'react-toastify';
 
 const SignInPage = () => {
@@ -25,7 +22,8 @@ const SignInPage = () => {
         });
         if(data){    
           toast.success("Login Successful")  
-          router.push("/");      
+        //   router.push("/");   
+            router.back();
         }
         if(error){
           toast.error(error.message)

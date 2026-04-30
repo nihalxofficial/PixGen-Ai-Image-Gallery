@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import { Button } from '@heroui/react';
+import BackButton from '@/components/BackButton';
 
 const PhotoDetailsPage = async ({ params }) => {
     const { id } = await params;
@@ -24,12 +24,7 @@ const PhotoDetailsPage = async ({ params }) => {
     return (
         <div className="max-w-5xl mx-auto px-4 py-8">
             {/* Back button */}
-            <Link 
-                href="/" 
-                className="inline-flex items-center gap-1 text-gray-600 hover:text-gray-900 mb-6 transition-colors"
-            >
-                ← Back to Home
-            </Link>
+           <BackButton/>
 
             <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
                 <div className="grid md:grid-cols-2 gap-6">
