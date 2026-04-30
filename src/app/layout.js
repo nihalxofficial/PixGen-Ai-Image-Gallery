@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
       data-theme="light"
       className={`light ${outfit.className} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col space-y-5">
         <Navbar/>
         {children}
         <Footer/>
