@@ -11,7 +11,6 @@ Generate high-quality images from simple text prompts — built for speed, scale
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-pixgen--wheat.vercel.app-black?style=for-the-badge&logo=vercel)](https://pixgen-wheat.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/atlas)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
 </div>
 
